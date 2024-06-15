@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&family=Noto+Sans+JP:wght@100..900&display=swap');
+* {
+  font-family: "Kumbh Sans", sans-serif;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -18,6 +23,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
+  height: 100vh;
   background: linear-gradient(
       to bottom,
       transparent,
@@ -26,8 +32,58 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+/* #cardsContainer::-webkit-scrollbar {
+  display: none;
+} */
+
+
+.focused-card {
+  border: solid 2px white;
+}
+
 @layer utilities {
+  
+  /* #cardsContainer, #collectiblesContainer {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  } */
+
+  .pointer-events-none {
+    pointer-events: none;
+  }
+
+  section {
+    margin-block: 8%;
+  }
+
   .text-balance {
     text-wrap: balance;
   }
+
+  .vertical-rl {
+    writing-mode: vertical-rl;
+  }
+
+  .vertical-text {
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+  }
+
+  .horizontal-tb {
+    writing-mode: horizontal-tb;
+  }
+
+  .scrollbar-width-none {
+    scrollbar-width: none;
+  }
+
+  .leading-20 {
+    line-height: 5rem;
+  }
+
+  .leading-14 {
+    line-height: 3.5rem;
+  }
 }
+
+
