@@ -1,20 +1,18 @@
 import { useCallback, useEffect } from "react"
 
 export default function Banner () {
-
-    const zero = document.timeline.currentTime;
     
     const autoScroll = () => {
         const bannerContainer = document.getElementById("banner-container")
         const bannerContainerBoundingRect = bannerContainer?.getBoundingClientRect()
-        if(zero && bannerContainer && bannerContainerBoundingRect && bannerContainerBoundingRect.width > bannerContainerBoundingRect.height){
+        if(bannerContainer && bannerContainerBoundingRect && bannerContainerBoundingRect.width > bannerContainerBoundingRect.height){
             const scrollableWidth = bannerContainer.scrollWidth - bannerContainerBoundingRect?.width;
             if(Math.abs(bannerContainer.scrollLeft - scrollableWidth) < 5)
                 bannerContainer.scrollTo(0,0)
             else
                 bannerContainer?.scrollTo(0, (bannerContainer.scrollLeft + scrollableWidth*(30)/10000))
         }
-        else if(bannerContainer && bannerContainerBoundingRect && zero){
+        else if(bannerContainer && bannerContainerBoundingRect){
             const scrollableHeight = bannerContainer.scrollHeight - bannerContainerBoundingRect?.height;
             if(Math.abs(bannerContainer.scrollTop - scrollableHeight) < 5)
                 bannerContainer.scrollTo(0,0)
