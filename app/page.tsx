@@ -1,6 +1,6 @@
 'use client'
 
-import Cover from "./components/cover";
+import Cover from "./components/Cover";
 import { useState } from "react";
 import Dashboard  from "./components/Dashboard"
 

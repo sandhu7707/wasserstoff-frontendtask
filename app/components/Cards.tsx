@@ -40,7 +40,7 @@ export default function Cards ({cards, focusable}: {cards: any[], focusable: boo
 
     return (
         <div className="z-20 w-full flex flex-col w-full max-w-[100vh] md:max-w-none">
-            <div id="cards-container" className="mt-40 my-20 flex flex-row w-full scrollbar-width-none overflow-scroll scroll-smooth" onLoad={() => scrollToCard(0)}>
+            <div id="cards-container" className="mt-40 my-20 flex flex-row w-full scrollbar-width-none overflow-scroll scroll-smooth">
                 <div className="w-[300px] h-full  grow-0 shrink-0 pt-12"></div>
                     {cards.map((x: any, i) => (
                         <div key={i} tabIndex={i} id={`card-${i}`} onClick={() => scrollOnClick(`card-${i}`)} className={`${focusable ? "opacity-75" : ""} focus:opacity-100 focus:scale-105 focus-visible:outline-0 duration-500 focus:duration-500 h-full grow-0 shrink-0 w-[400px] mr-10`}>
